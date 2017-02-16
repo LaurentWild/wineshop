@@ -1,14 +1,14 @@
 'use strict'
-class Markets {
+class owners {
 
-  constructor(marketsJSON) {
+  constructor(ownersJSON) {
     this.data = [];
 
-    marketsJSON.sort((cur, next) => {
+    ownersJSON.sort((cur, next) => {
       return cur.id - next.id;
     }).forEach((sJSON) => {
-      let market = new Market(sJSON);
-      this.data.push(market);
+      let owner = new Owner(sJSON);
+      this.data.push(owner);
     })
     // Important for "filter" exercise - little hint here ;)
     this.unfilteredData = this.data;
