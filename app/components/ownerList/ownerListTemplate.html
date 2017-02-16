@@ -1,0 +1,23 @@
+<div class="col-10">
+  <h3>Liste Markets</h3>
+
+  <table id="owners">
+  <thead>
+    <tr>
+      <!-- sorted by name by default -->
+      <th data-sort="id">ID</th>
+      <th data-sort="firstname">Prènom</th>
+      <th data-sort="lastname">Nom</th>
+      <th data-sort="email">Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="owner in $ctrl.owners | orderBy: $ctrl.orderProp">
+      <td>{{owner.id}}</td>
+      <td>{{owner.lastname}}</td>
+      <td>{{owner.firstname}}</td>
+      <td>{{owner.email}}</td>
+    </tr>
+  </tbody>
+  </table>
+</div>

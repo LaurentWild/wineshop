@@ -9,21 +9,35 @@
 </head>
 <body>
 
-{{ 1 + 3}}
-<map></map>
+  {{ 1 + 3}}
+  <map></map>
+
+
+  <h1>Listes</h1>
+
+  <market-list></market-list>
+  
+  <owner-list></owner-list>
+
   <script src="/node_modules/angular/angular.js"></script>
-
-
-<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
 
   <!-- App models -->
-  <script type="text/javascript" src="/app/models/wine.js"></script>
-  <script type="text/javascript" src="/app/collections/wines.js"></script>
+  <script type="text/javascript" src="/app/models/market.js"></script>
+  <script type="text/javascript" src="/app/collections/markets.js"></script>
+  <script type="text/javascript" src="/app/models/owner.js"></script>
+  <script type="text/javascript" src="/app/collections/owners.js"></script>
 
   <!-- angular -->
   <script src="/app/app.js"></script>
   <script src="/app/components/map/mapModule.js"></script>
   <script src="/app/components/map/mapController.js"></script>
   <script src="/app/components/map/mapComponent.js"></script>
+  <script src="/app/components/marketList/marketListModule.js"></script>
+  <script src="/app/components/marketList/marketListController.js"></script>
+  <script src="/app/components/marketList/marketListComponent.js"></script>
+  <script src="/app/components/ownerList/ownerListModule.js"></script>
+  <script src="/app/components/ownerList/ownerListController.js"></script>
+  <script src="/app/components/ownerList/ownerListComponent.js"></script>
 </body>
 </html>

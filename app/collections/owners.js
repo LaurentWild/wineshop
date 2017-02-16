@@ -1,15 +1,15 @@
 'use strict'
-class owners {
+class Owners{
 
-  constructor(ownersJSON) {
+  constructor(ownersAPI) {
     this.data = [];
 
-    ownersJSON.sort((cur, next) => {
-      return cur.id - next.id;
-    }).forEach((sJSON) => {
-      let owner = new Owner(sJSON);
+    ownersAPI.forEach((mAPI) => {
+      let owner = new Owner(mAPI);
+
       this.data.push(owner);
     })
+
     // Important for "filter" exercise - little hint here ;)
     this.unfilteredData = this.data;
   }
