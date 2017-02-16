@@ -1,10 +1,10 @@
 'use strict'
-class Wines {
+class Markets {
 
-  constructor(winesJSON) {
+  constructor(marketsJSON) {
     this.data = [];
 
-    winesJSON.sort((cur, next) => {
+    marketsJSON.sort((cur, next) => {
       return cur.id - next.id;
     }).forEach((sJSON) => {
       let wine = new Wine(sJSON);
