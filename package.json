@@ -1,0 +1,14 @@
+{
+  "name": "wine-app",
+  "version": "1.0.0",
+  "description": "Wine markets",
+  "scripts": {
+  },
+  "keywords": [],
+  "author": "WineWasted",
+  "repository": "",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "^1.6.1"
+  }
+}
