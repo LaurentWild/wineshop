@@ -1,24 +1,24 @@
 <div class="col-10">
-  <h3>Liste Markets</h3>
+  <h3>Liste Products</h3>
 
-  <table id="markets">
+  <table id="products">
   <thead>
     <tr>
       <!-- sorted by name by default -->
       <th data-sort="id">ID</th>
       <th data-sort="name">Nom</th>
-      <th data-sort="position">Localization</th>
       <th data-sort="description">Description</th>
-      <th data-sort="products">Produits</th>
+      <th data-sort="image">Image</th>
+      <th data-sort="owner">Owner ID</th>
     </tr>
   </thead>
   <tbody>
-    <tr ng-repeat="market in $ctrl.markets | orderBy: $ctrl.orderProp">
-      <td>{{market.id}}</td>
-      <td>{{market.name}}</td>
-      <td>{{market.position}}</td>
-      <td>{{market.description}}</td>
-      <td>{{market.products}}</td>
+    <tr ng-repeat="product in $ctrl.products | orderBy: $ctrl.orderProp">
+      <td>{{product.id}}</td>
+      <td>{{product.name}}</td>
+      <td>{{product.description}}</td>
+      <td>{{product.pictureURL}} <img ng-src="http://wine.wildcodeschool.fr/{{product.pictureURL}}" width="50px"></td>
+      <td>{{product.ownerID}}</td>
     </tr>
   </tbody>
   </table>
