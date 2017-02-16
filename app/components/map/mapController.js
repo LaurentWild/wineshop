@@ -1,8 +1,9 @@
 angular.module("map")
     .controller("mapController", ["$http", function mapController($http) {
-
+let marketsCollection;
 
         $http.get("../json/markets.json").then((response) => {
+            console.log(response.data)
               marketsCollection = new Markets(response.data)
               this.markets = marketsCollection.data;
             })
