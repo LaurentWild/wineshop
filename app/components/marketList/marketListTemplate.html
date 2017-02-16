@@ -1,0 +1,25 @@
+<div class="col-10">
+  <h3>Liste Markets</h3>
+
+  <table id="markets">
+  <thead>
+    <tr>
+      <!-- sorted by name by default -->
+      <th data-sort="id">ID</th>
+      <th data-sort="name">Nom</th>
+      <th data-sort="position">Localization</th>
+      <th data-sort="description">Description</th>
+      <th data-sort="products">Produits</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="market in $ctrl.markets | orderBy: $ctrl.orderProp">
+      <td>{{market.id}}</td>
+      <td>{{market.name}}</td>
+      <td>{{market.position}}</td>
+      <td>{{market.description}}</td>
+      <td>{{market.products}}</td>
+    </tr>
+  </tbody>
+  </table>
+</div>

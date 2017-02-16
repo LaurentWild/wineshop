@@ -2,7 +2,7 @@
 class Market {
 
   constructor(api){
-    this.id = api._id;
+    this.id = api.id;
     this.name = api.name;
     this.position = api.position;
     this.description = api.description;
