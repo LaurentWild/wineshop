@@ -1,10 +1,10 @@
-angular.module("marketList").controller("marketListController", ["$http", function marketListController($http) {
-  let marketCollection;
+angular.module("productList").controller("productListController", ["$http", function productListController($http) {
+  let productsCollection;
   this.orderProp = 'name';
 
-  $http.get("http://wine.wildcodeschool.fr/api/v1/markets").then((response) => {
-    marketsCollection = new Markets(response.data)
-    this.markets = marketsCollection.data;
+  $http.get("http://wine.wildcodeschool.fr/api/v1/wines").then((response) => {
+    productsCollection = new Products(response.data)
+    this.products = productsCollection.data;
   }) 
 	
 }])

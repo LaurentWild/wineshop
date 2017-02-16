@@ -1,12 +1,12 @@
 'use strict'
-class Market {
+class Product {
 
   constructor(api){
     this.id = api.id;
     this.name = api.name;
-    this.position = api.position;
     this.description = api.description;
-    this.products = api.products;
+    this.pictureURL = api.picture;
+    this.ownerID = api.owner;
   }
 	
 }

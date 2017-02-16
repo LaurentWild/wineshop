@@ -1,13 +1,13 @@
 'use strict'
-class Markets{
+class Products{
 
-  constructor(marketsAPI) {
+  constructor(productsAPI) {
     this.data = [];
 
-    marketsAPI.forEach((mAPI) => {
-      let market = new Market(mAPI);
+    productsAPI.forEach((API) => {
+      let product = new Product(API);
 
-      this.data.push(market);
+      this.data.push(product);
     })
 
     // Important for "filter" exercise - little hint here ;)

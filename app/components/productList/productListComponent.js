@@ -1,5 +1,5 @@
 'use strict'
-angular.module('marketList').component('marketList', {
-  templateUrl: "/app/components/marketList/marketListTemplate.html",
-  controller: "marketListController"
+angular.module('productList').component('productList', {
+  templateUrl: "/app/components/productList/productListTemplate.html",
+  controller: "productListController"
 })

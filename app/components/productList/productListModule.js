@@ -1,1 +1,1 @@
-angular.module('marketList', [])
+angular.module('productList', [])
