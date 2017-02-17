@@ -78,6 +78,7 @@ header {
     height: 52px;
     display: inline-block;
     margin-left: 30px;
+    cursor: pointer;
 }
 
 #logo span {
@@ -152,6 +153,7 @@ header #selectFilter label {
 
 #hello span {
     float: right;
+    cursor: pointer;
 }
 
 #hello span a {
@@ -284,6 +286,7 @@ i {
 
 #market span {
     float: right;
+    cursor: pointer;
 }
 
 #market span a {
@@ -355,6 +358,7 @@ i {
 }
 
 #product span.btnClose {
+    cursor: pointer;
     float: right;
 }
 
@@ -402,6 +406,7 @@ i {
 
 #owner span {
     float: right;
+    cursor: pointer;
 }
 
 #owner span a {

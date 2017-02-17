@@ -29,20 +29,44 @@
     <button type="button" class="btn btn-danger btn-style btn-lg fontStyle">Tous les Producteurs</button>
     <button type="button" class="btn btn-danger btn-style btn-lg fontStyle">Tous les Vins</button>
 </div>
+
+
+
 <div id="marketsList" ng-controller="marketListController as mar">
-    <ul ng-show="marketsDiv">
-        <li ng-repeat="market in mar.markets">{{market.name}}</li>
-    </ul>
+   <div id="listLeft" ng-show="marketsDiv">
+     <input id="searchList" class="form-control" type="text" placeholder="Recherche...">
+     <i class="form-control-feedback glyphicon glyphicon-search" aria-hidden="true"></i>
+     <div id="listPlacer">
+       <ul id="list">
+         <li ng-repeat="market in mar.markets">{{market.name}}</li>
+       </ul>
+     </div>
+     <div id="btnOpenClose" class="btnCloseLeft" ng-click="marketsDiv = false;ownersDiv = false; productsDiv = false">&#60;</div>
+  </div>
 </div>
 <div id="ownersList" ng-controller="ownerListController as own">
-    <ul ng-show="ownersDiv">
-        <li ng-repeat="owner in own.owners">{{owner.fullname}}</li>
-    </ul>
+   <div id="listLeft" ng-show="ownersDiv">
+     <input id="searchList" class="form-control" type="text" placeholder="Recherche...">
+     <i class="form-control-feedback glyphicon glyphicon-search" aria-hidden="true"></i>
+     <div id="listPlacer">
+       <ul id="list">
+         <li ng-repeat="owner in own.owners">{{owner.fullname}}</li>
+       </ul>
+     </div>
+     <div id="btnOpenClose" class="btnCloseLeft" ng-click="marketsDiv = false;ownersDiv = false; productsDiv = false">&#60;</div>
+  </div>
 </div>
 <div id="productsList" ng-controller="productListController as prod">
-    <ul ng-show="productsDiv">
-        <li ng-repeat="product in prod.products">{{product.name}}</li>
-    </ul>
+   <div id="listLeft" ng-show="productsDiv">
+     <input id="searchList" class="form-control" type="text" placeholder="Recherche...">
+     <i class="form-control-feedback glyphicon glyphicon-search" aria-hidden="true"></i>
+     <div id="listPlacer">
+       <ul id="list">
+         <li ng-repeat="product in prod.products">{{product.name}}</li>
+       </ul>
+     </div>
+     <div id="btnOpenClose" class="btnCloseLeft" ng-click="marketsDiv = false;ownersDiv = false; productsDiv = false">&#60;</div>
+  </div>
 </div>
 <div id="markerDetail" ng-show="markerDetail">
 </div>
