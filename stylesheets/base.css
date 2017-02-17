@@ -4,7 +4,7 @@ body {
     margin: 0;
 }
 
-html, body, #mapid {
+html, body, #content,#mapid {
     height: 100%;
     width: 100%;
 }
@@ -14,10 +14,15 @@ html, body, #mapid {
 
 #marketTab {
     background-color: #F00;
-
     height: 30px;
     position: absolute;
     width: 100px;
     top:10px;
     z-index: 100000;
+}
+#geoDiv {
+    position: absolute;
+    right:10px;
+    top:10px;
+    z-index: 1000001;
 }

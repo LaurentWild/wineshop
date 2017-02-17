@@ -1,7 +1,12 @@
-<!-- <div ng-controller="mapController as mapC"> -->
-    <div id="mapid"></div>
+<!-- <div ng-controller="mapController as $ctrl."> -->
+<div id="mapid"></div>
 
-    <div>{{titlee}}</div>
-    <div id="marketTab">sfsdfsdf{{titlee}}</div>
-    <!-- <input ng-model="titlee"> -->
+
+<div> {{ $ctrl.titlee}} </div>
+<div id="marketTab">
+    <!-- <select ng-model='markets' ng-options='$ctrl.market.name for market in $ctrl.markets'></select> -->
+    <!-- <input ng-model="marketTab"> {{$ctrl.titlee}}d -->
+    {{ $ctrl.marketTab }}
+</div>
+<!-- <input ng-model="titlee"> -->
 <!-- </div> -->
