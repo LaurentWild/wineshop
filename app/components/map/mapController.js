@@ -1,5 +1,5 @@
 angular.module("map")
-    .controller("mapController", ["$http", function mapController($http) {
+    .controller("mapController", ["$http", "$scope", function mapController($http, $scope) {
         // INIT MAP
         let map = L.map('mapid', {
             center: [44.83, -0.57],
@@ -14,18 +14,29 @@ angular.module("map")
         let marketsCollection;
         // ORDER BY NAME
         this.orderProp = 'name';
-        let clicked = '';
         // GET JSON
         $http.get("http://wine.wildcodeschool.fr/api/v1/markets").then((response) => {
             marketsCollection = new Markets(response.data)
             this.markets = marketsCollection.data;
             // FOR EACH MARKET
             for (let market of this.markets) {
+                // ON MARKER CLICK
+                let onMarkerClick = (e) => {
+                    // console.log(e)
+                    // console.log(this)
+                    console.log(e.target.options.myCustomImg)
+
+                    $scope.marketTab = `<p>w${e.target.options.myCustomName}<br />${e.target.options.myCustomDesc}</p>`;
+                    $scope.$apply()
+
+                    $scope.markerDetail = true;
+                }
                 // FOMAT POSITION
                 let posTab = [market.position.split(", ")[0], market.position.split(", ")[1]];
                 var marker = L.marker(posTab, {
                     myCustomId: market.id,
-                    myCustomName: market.name
+                    myCustomName: market.name,
+                    myCustomDesc: market.description
                 });
                 // POP UP
                 marker.bindPopup(market.name);
@@ -33,16 +44,8 @@ angular.module("map")
                 marker.on('click', onMarkerClick);
                 // ADD TO MAP
                 marker.addTo(map);
-                // ON MARKER CLICK
-                function onMarkerClick(e) {
-                    console.log(this.options.myCustomName)
-                    clicked = `<p>w${this.options.myCustomName}</p>`; //;
-                }
             }
         })
-        this.marketTab = clicked;
-        this.titlee = "ert";
-
 
 
 

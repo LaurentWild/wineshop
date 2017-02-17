@@ -1,0 +1,48 @@
+<div id="barra" class="barraLeft">
+</div>
+<div id="barra" class="barraRight"></div>
+<div id="barra" class="barraBottom"></div>
+<header>
+    <div id="logo">
+        <span></span>
+        <h1 ng-click="close = false">FindWine</h1></div>
+    <div id="selectFilter">
+        <div class="form-group">
+            <label class="fontDetail">Listes : </label>
+            <label class="radio-inline">
+        <input type="radio" name="filterDisplayOptions" id="radioMagazins" value="magazins" ng-click="marketsDiv = true;ownersDiv = false;productsDiv = false"> Magazins
+      </label>
+            <label class="radio-inline">
+        <input type="radio" name="filterDisplayOptions" id="radioProducteurs" value="producteurs" ng-click="marketsDiv = false;ownersDiv = true;productsDiv = false"> Producteurs
+      </label>
+            <label class="radio-inline">
+        <input type="radio" name="filterDisplayOptions" id="radioVins" value="vins" ng-click="marketsDiv = false;ownersDiv = false; productsDiv = true"> Vins
+      </label>
+        </div>
+    </div>
+</header>
+<div id="hello" ng-hide="close">
+    <span class="btnClose" ng-click="close = true">X</span>
+    <h2 class="fontStyle">Bienvenue!</h2>
+    <h4 class="fontDetail">Besoin d’aide pour trouver du bon vin ?</h4>
+    <button type="button" class="btn btn-danger btn-style btn-lg fontStyle">Tous les Magasins</button>
+    <button type="button" class="btn btn-danger btn-style btn-lg fontStyle">Tous les Producteurs</button>
+    <button type="button" class="btn btn-danger btn-style btn-lg fontStyle">Tous les Vins</button>
+</div>
+<div id="marketsList" ng-controller="marketListController as mar">
+    <ul ng-show="marketsDiv">
+        <li ng-repeat="market in mar.markets">{{market.name}}</li>
+    </ul>
+</div>
+<div id="ownersList" ng-controller="ownerListController as own">
+    <ul ng-show="ownersDiv">
+        <li ng-repeat="owner in own.owners">{{owner.fullname}}</li>
+    </ul>
+</div>
+<div id="productsList" ng-controller="productListController as prod">
+    <ul ng-show="productsDiv">
+        <li ng-repeat="product in prod.products">{{product.name}}</li>
+    </ul>
+</div>
+<div id="markerDetail" ng-show="markerDetail">
+</div>

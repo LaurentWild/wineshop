@@ -1,6 +1,6 @@
 'use strict'
 angular.module('wine-app', [
-  'map',
+  'map', 'hello',
 	'marketList',
 	'ownerList',
 	'productList'

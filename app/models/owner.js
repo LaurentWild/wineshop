@@ -5,7 +5,8 @@ class Owner {
     this.id = api._id;
     this.lastname = api.lastname;
     this.firstname = api.firstname;
+    this.fullname = api.firstname + ' ' + api.lastname
     this.email = api.email;
   }
-	
+
 }
