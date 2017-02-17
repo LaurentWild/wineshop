@@ -46,8 +46,4 @@ angular.module("map")
                 marker.addTo(map);
             }
         })
-
-
-
-
     }])

@@ -6,7 +6,6 @@ class Products{
 
     productsAPI.forEach((API) => {
       let product = new Product(API);
-
       this.data.push(product);
     })
 
