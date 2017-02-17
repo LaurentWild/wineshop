@@ -64,35 +64,29 @@
     </div>
 </div>
 
+
 <div id="ownersList" ng-controller="ownerListController as own">
     <div id="listLeft" ng-show="showOwnersList">
         <input id="searchList" class="form-control" type="text" placeholder="Recherche..." ng-model="$ctrl.searchowner">
         <i class="form-control-feedback glyphicon glyphicon-search" aria-hidden="true"></i>
         <div id="listPlacer">
             <ul id="list">
-                <li ng-repeat="owner in own.owners | filter: $ctrl.searchowner">{{owner.fullname}}</li>
+                <li ng-repeat="owner in own.owners | filter: $ctrl.searchowner" ng-click="own.ownerNameClick()">
+                    {{owner.fullname}}
+                </li>
             </ul>
         </div>
         <div id="btnOpenClose" class="btnCloseLeft" ng-click="showOwnersList = false">&#60;</div>
     </div>
-    <!-- <div id="ownerPlacer">
+    <div id="ownerPlacer" ng-show="showOwnerPlacer">
       <div id="owner">
           <span class="btnClose" ng-click="showOwnerPlacer = false">X</span>
         <div class="leftBlock">
           <h2 class="fontDetail">{{ownerName}}</h2>
           <h4 class="fontDetail">{{ownerEmail}}</h4>
         </div>
-        <h3 class="fontDetail">Liste de Produits</h3>
-        <div id="listProducts">
-          <ul>
-              <li ng-repeat="product in ownerProducts">
-                  <h4 class="fontDetail">{{ product.name }}</h4>
-                  <img src="{{ 'http://wine.wildcodeschool.fr' + product.picture }}" alt="{{product.name}}">
-              </li>
-          </ul>
-        </div>
       </div>
-    </div> -->
+    </div>
 </div>
 <div id="productsList" ng-controller="productListController as prod">
     <div id="listLeft" ng-show="showProductsList">

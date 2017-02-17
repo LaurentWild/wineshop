@@ -9,14 +9,15 @@ angular.module("ownerList").controller("ownerListController", ["$http", "$scope"
 
         // FOR EACH OWNER
         for (let owner of this.owners) {
+        console.log(owner)
             // ON OWNER CLICK
             this.ownerNameClick = (e) => {
                 // console.log(e)
-                console.log(this)
 
-                $scope.ownerName = owner.name;
-                $scope.ownerDesc = owner.description;
-                $scope.ownerProducts = owner.products;
+                $scope.ownerName = owner.fullname;
+                $scope.ownerEmail = owner.email;
+                   $scope.ownerProducts = owner.wines;
+                   console.log($scope.ownerProducts)
 
                 $scope.showOwnerPlacer = true;
             }
