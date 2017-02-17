@@ -21,7 +21,7 @@ angular.module("map")
             // FOR EACH MARKET
             for (let market of this.markets) {
                 // ON MARKER CLICK
-                let onMarkerClick = (e) => {
+                this.onMarkerClick = (e) => {
                     // console.log(e)
                     // console.log(this)
                     // console.log(e.target.options.myCustomName, e.target.options.myCustomDesc)
@@ -51,7 +51,7 @@ angular.module("map")
                 // POP UP
                 marker.bindPopup(market.name);
                 // CLICK
-                marker.on('click', onMarkerClick);
+                marker.on('click', this.onMarkerClick);
 
                 // ADD TO MAP
                 marker.addTo(map);
