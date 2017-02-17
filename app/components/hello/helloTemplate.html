@@ -34,11 +34,11 @@
 
 <div id="marketsList" ng-controller="marketListController as mar">
    <div id="listLeft" ng-show="marketsDiv">
-     <input id="searchList" class="form-control" type="text" placeholder="Recherche...">
+     <input id="searchList" class="form-control" type="text" placeholder="Recherche..." ng-model="$ctrl.searchmarket">
      <i class="form-control-feedback glyphicon glyphicon-search" aria-hidden="true"></i>
      <div id="listPlacer">
        <ul id="list">
-         <li ng-repeat="market in mar.markets">{{market.name}}</li>
+         <li ng-repeat="market in mar.markets | filter: $ctrl.searchmarket">{{market.name}}</li>
        </ul>
      </div>
      <div id="btnOpenClose" class="btnCloseLeft" ng-click="marketsDiv = false;ownersDiv = false; productsDiv = false">&#60;</div>
@@ -46,11 +46,11 @@
 </div>
 <div id="ownersList" ng-controller="ownerListController as own">
    <div id="listLeft" ng-show="ownersDiv">
-     <input id="searchList" class="form-control" type="text" placeholder="Recherche...">
+     <input id="searchList" class="form-control" type="text" placeholder="Recherche..." ng-model="$ctrl.searchowner">
      <i class="form-control-feedback glyphicon glyphicon-search" aria-hidden="true"></i>
      <div id="listPlacer">
        <ul id="list">
-         <li ng-repeat="owner in own.owners">{{owner.fullname}}</li>
+         <li ng-repeat="owner in own.owners | filter: $ctrl.searchowner">{{owner.fullname}}</li>
        </ul>
      </div>
      <div id="btnOpenClose" class="btnCloseLeft" ng-click="marketsDiv = false;ownersDiv = false; productsDiv = false">&#60;</div>
@@ -58,11 +58,11 @@
 </div>
 <div id="productsList" ng-controller="productListController as prod">
    <div id="listLeft" ng-show="productsDiv">
-     <input id="searchList" class="form-control" type="text" placeholder="Recherche...">
+     <input id="searchList" class="form-control" type="text" placeholder="Recherche..." ng-model="$ctrl.searchproduct">
      <i class="form-control-feedback glyphicon glyphicon-search" aria-hidden="true"></i>
      <div id="listPlacer">
        <ul id="list">
-         <li ng-repeat="product in prod.products">{{product.name}}</li>
+         <li ng-repeat="product in prod.products | filter: $ctrl.searchproduct">{{product.name}}</li>
        </ul>
      </div>
      <div id="btnOpenClose" class="btnCloseLeft" ng-click="marketsDiv = false;ownersDiv = false; productsDiv = false">&#60;</div>
