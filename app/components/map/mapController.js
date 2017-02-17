@@ -24,24 +24,35 @@ angular.module("map")
                 let onMarkerClick = (e) => {
                     // console.log(e)
                     // console.log(this)
-                    console.log(e.target.options.myCustomImg)
+                    // console.log(e.target.options.myCustomName, e.target.options.myCustomDesc)
 
-                    $scope.marketTab = `<p>w${e.target.options.myCustomName}<br />${e.target.options.myCustomDesc}</p>`;
-                    $scope.$apply()
+                    $scope.marketName = e.target.options.myCustomName;
+                    $scope.marketDesc = e.target.options.myCustomDesc;
+                    $scope.marketProducts = e.target.options.myCustomProducts;
 
+                    $scope.showMarketPlacer = true;
+                    // $scope.marketTab = `<p>w${e.target.options.myCustomName}<br />${e.target.options.myCustomDesc}</p>`;
+                    // AFFICHE MARKER DETAILS
                     $scope.markerDetail = true;
+                    // HIDE LISTS
+                    $scope.marketsDiv = true;
+                    $scope.ownersDiv = true;
+                    $scope.productsDiv = true;
+                    $scope.$apply()
                 }
                 // FOMAT POSITION
                 let posTab = [market.position.split(", ")[0], market.position.split(", ")[1]];
                 var marker = L.marker(posTab, {
                     myCustomId: market.id,
                     myCustomName: market.name,
-                    myCustomDesc: market.description
+                    myCustomDesc: market.description,
+                    myCustomProducts: market.products
                 });
                 // POP UP
                 marker.bindPopup(market.name);
                 // CLICK
                 marker.on('click', onMarkerClick);
+
                 // ADD TO MAP
                 marker.addTo(map);
             }

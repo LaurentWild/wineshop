@@ -1,11 +1,32 @@
 <!-- <div ng-controller="mapController as $ctrl."> -->
-<div id="mapid"></div>
 
 
-<div> {{ titlee}} </div>
-<div id="marketTab">
-    <!-- <select ng-model='markets' ng-options='$ctrl.market.name for market in $ctrl.markets'></select> -->
-    <!-- <input ng-model="marketTab"> {{$ctrl.titlee}}d -->
- {{marketTab}}
-</div>
+
+<!-- <div> {{ titlee}} </div> -->
+<!-- <div id="marketTab"> -->
+<!-- <select ng-model='markets' ng-options='$ctrl.market.name for market in $ctrl.markets'></select> -->
+<!-- <input ng-model="marketTab"> {{$ctrl.titlee}}d -->
+<!-- {{marketTab}} -->
+<!-- </div> -->
 <!-- <input ng-model="titlee"> -->
+
+
+<div id="marketPlacer" ng-show="showMarketPlacer">
+    <div id="market">
+        <span class="btnClose" ng-click="showMarketPlacer = false">X</span>
+        <h2 class="fontStyle">{{marketName}}</h2>
+        <p class="fontDetail">{{marketDesc}}</p>
+        <h3 class="fontDetail">Liste de Produits</h3>
+        <div id="listProducts">
+            <ul>
+                <li ng-repeat="product in marketProducts">
+                    <h4 class="fontDetail">{{ product.name }}</h4>
+                    <img src="{{ 'http://wine.wildcodeschool.fr' + product.picture }}" alt="{{product.name}}">
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<div id="mapid"></div>
