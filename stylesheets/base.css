@@ -225,6 +225,7 @@ i{
 	display:block;
 	position:absolute;
 	background-color:rgba(0,0,0,1);
+	pointer-events:visible;
 }
 #btnOpenClose.btnCloseLeft{
 	padding:15px 0 0;
@@ -235,27 +236,19 @@ i{
 	margin:-25px 0 0;
 	color:#fff;
 	border-radius: 5px 0 0 5px;
-	cursor:pointer;
-}
-#btnOpenClose.btnCloseLeft{
-	padding:15px 0 0;
-	width:15px;
-	height:50px;
-	top:50%;
-	right:-5px;
-	margin:-25px 0 0;
-	color:#fff;
-	border-radius: 5px 0 0 5px;
+	pointer-events:visible;
 	cursor:pointer;
 }
 
 #marketPlacer{
 	text-align:center;
-	position:absolute;
+	position:relative;
 	top:50%;
-	margin:-225px 0 0;
+	left:50%;
+	margin:-225px 0 0 -25%;
 	border-radius: 6px;
 	pointer-events:visible;
+	width:50%;
 }
 #market{
 	background-color:#fff;
@@ -281,10 +274,10 @@ i{
 }
 #listProducts ul{
 	max-height:200px;
-	width:920px;
+	position:relative;
 	padding:10px;
 	margin:0;
-	display:block;
+	display:inline-flex;
 }
 #listProducts ul li{
 	width:150px;
@@ -304,5 +297,127 @@ i{
 	padding:0;
 	margin:0;
 	width:35px;
+}
+
+
+#productPlacer{
+	text-align:center;
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin:-225px 0 0 -25%;
+	border-radius: 6px;
+	pointer-events:visible;
+	width:50%;
+}
+#product{
+	background-color:#fff;
+	border-radius: 6px;
+	border:10px solid rgba(0,0,0,0.6);
+	padding:10px 20px;
+}
+#product .rightBlock p{
+	margin:20px 0 20px;
+}
+#product span.btnClose{
+	float:right;
+}
+#product span a{
+	color:#d9d9d9;
+}
+#product span a:hover{
+	color:#000;
+	text-decoration:none;
+}
+#product .leftBlock{
+	display:inline-block;
+	width:30%;
+}
+#product .leftBlock img{
+	width:100px;
+}
+#product .rightBlock{
+	float:left;
+	text-align:left;
+	width:58%;
+}
+
+@media screen and (max-width: 1058px) {
+	
+	#productPlacer{
+		margin:-225px 0 0 -35%;
+		width:70%;
+	}
+}
+
+@media screen and (max-width: 991px) {
+	
+	#marketPlacer{
+		margin:-225px 0 0 -35%;
+		width:70%;
+	}
+	#market,
+	#product{
+		padding:10px 15px;
+	}
+}
+
+
+@media screen and (max-width: 767px) {
+	#marketPlacer,
+	#productPlacer{
+		margin:-225px 0 0 -45%;
+		width:90%;
+	}
+	#product .rightBlock p{
+		margin:20px 0 20px;
+	}
+	h2{
+		font-size:22px;
+	}
+	p{
+		font-size:14px;
+	}
+	h3{
+		font-size:18px;
+	}
+	h4{
+		font-size:15px;
+	}
+}
+
+@media screen and (max-width: 560px) {
+	#marketPlacer,
+	#productPlacer{
+		margin:-225px 0 0 -50%;
+		width:100%;
+	}
+	#listProducts{
+		height:170px;
+	}
+	#listProducts ul{
+		max-height:170px;
+	}
+	#marketPlacer ul li{
+		width:110px;
+	}
+	#listProducts ul li img{
+		padding:0;
+		margin:0;
+		width:25px;
+	}
+	
+}
+@media screen and (max-width: 450px) {
+	#product .leftBlock img{
+		width:70px;
+		float:left;
+	}
+#product .rightBlock{
+	float:none;
+	display:inline-block;
+	text-align:left;
+	width:58%;
+}
 }
 
