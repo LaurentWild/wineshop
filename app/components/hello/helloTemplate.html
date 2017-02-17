@@ -1,5 +1,4 @@
-
-    <div id="barra" class="barraLeft">
+<div id="barra" class="barraLeft">
 </div>
 <div id="barra" class="barraRight"></div>
 <div id="barra" class="barraBottom"></div>
@@ -11,14 +10,15 @@
         <div class="form-group">
             <label class="fontDetail">Listes : </label>
             <label class="radio-inline">
-        <input type="radio" name="filterDisplayOptions" id="radioMagazins" value="magazins" ng-click="marketsDiv = true;ownersDiv = false;productsDiv = false;markerDetail = false"> Magasins
-      </label>
+
+                <input type="radio" name="filterDisplayOptions" id="radioMagazins" value="magazins" ng-click="showMarketsList = true;showOwnersList = false;showProductsList = false;markerDetail = false"> Magasins
+            </label>
             <label class="radio-inline">
-        <input type="radio" name="filterDisplayOptions" id="radioProducteurs" value="producteurs" ng-click="marketsDiv = false;ownersDiv = true;productsDiv = false"> Producteurs
-      </label>
+                <input type="radio" name="filterDisplayOptions" id="radioProducteurs" value="producteurs" ng-click="showMarketsList = false;showOwnersList = true;showProductsList = false"> Producteurs
+            </label>
             <label class="radio-inline">
-        <input type="radio" name="filterDisplayOptions" id="radioVins" value="vins" ng-click="marketsDiv = false;ownersDiv = false; productsDiv = true"> Vins
-      </label>
+                <input type="radio" name="filterDisplayOptions" id="radioVins" value="vins" ng-click="showMarketsList = false;showOwnersList = false; showProductsList = true"> Vins
+            </label>
         </div>
     </div>
 </header>
@@ -26,24 +26,48 @@
     <span class="btnClose" ng-click="close = true">X</span>
     <h2 class="fontStyle">Bienvenue!</h2>
     <h4 class="fontDetail">Besoin d’aide pour trouver du bon vin ?</h4>
-    <button type="button" class="btn btn-danger btn-style btn-lg fontStyle">Tous les Magasins</button>
-    <button type="button" class="btn btn-danger btn-style btn-lg fontStyle">Tous les Producteurs</button>
-    <button type="button" class="btn btn-danger btn-style btn-lg fontStyle">Tous les Vins</button>
+    <button type="button" class="btn btn-danger btn-style btn-lg fontStyle" ng-click="showMarketsList = true;showOwnersList = false;productsDiv = false">Tous les Magasins</button>
+    <button type="button" class="btn btn-danger btn-style btn-lg fontStyle" ng-click="showMarketsList = false;showOwnersList = true;productsDiv = false">Tous les Producteurs</button>
+    <button type="button" class="btn btn-danger btn-style btn-lg fontStyle" ng-click="showMarketsList = false;showOwnersList = false; productsDiv = true">Tous les Vins</button>
 </div>
+
+
+
 <div id="marketsList" ng-controller="marketListController as mar">
-    <ul ng-show="marketsDiv">
-        <li ng-repeat="market in mar.markets">{{market.name}}</li>
-    </ul>
+    <div id="listLeft" ng-show="showMarketsList">
+        <input id="searchList" class="form-control" type="text" placeholder="Recherche..." ng-model="$ctrl.searchmarket">
+        <i class="form-control-feedback glyphicon glyphicon-search" aria-hidden="true"></i>
+        <div id="listPlacer">
+            <ul id="list">
+                <li ng-repeat="market in mar.markets | filter: $ctrl.searchmarket">{{market.name}}</li>
+            </ul>
+        </div>
+        <div id="btnOpenClose" class="btnCloseLeft" ng-click="showMarketsList = false;showOwnersList = false; productsDiv = false">&#60;</div>
+    </div>
 </div>
 <div id="ownersList" ng-controller="ownerListController as own">
-    <ul ng-show="ownersDiv">
-        <li ng-repeat="owner in own.owners">{{owner.fullname}}</li>
-    </ul>
+    <div id="listLeft" ng-show="showOwnersList">
+        <input id="searchList" class="form-control" type="text" placeholder="Recherche..." ng-model="$ctrl.searchowner">
+        <i class="form-control-feedback glyphicon glyphicon-search" aria-hidden="true"></i>
+        <div id="listPlacer">
+            <ul id="list">
+                <li ng-repeat="owner in own.owners | filter: $ctrl.searchowner">{{owner.fullname}}</li>
+            </ul>
+        </div>
+        <div id="btnOpenClose" class="btnCloseLeft" ng-click="showMarketsList = false;showOwnersList = false; productsDiv = false">&#60;</div>
+    </div>
 </div>
 <div id="productsList" ng-controller="productListController as prod">
-    <ul ng-show="productsDiv">
-        <li ng-repeat="product in prod.products">{{product.name}}</li>
-    </ul>
+    <div id="listLeft" ng-show="showProductsList">
+        <input id="searchList" class="form-control" type="text" placeholder="Recherche..." ng-model="$ctrl.searchproduct">
+        <i class="form-control-feedback glyphicon glyphicon-search" aria-hidden="true"></i>
+        <div id="listPlacer">
+            <ul id="list">
+                <li ng-repeat="product in prod.products | filter: $ctrl.searchproduct">{{product.name}}</li>
+            </ul>
+        </div>
+        <div id="btnOpenClose" class="btnCloseLeft" ng-click="showMarketsList = false;showOwnersList = false; showProductsList = false">&#60;</div>
+    </div>
 </div>
 <div id="markerDetail" ng-show="markerDetail">
 </div>
