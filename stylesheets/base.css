@@ -1,7 +1,21 @@
 body {
     font-size: 16px;
     padding: 0;
-    margin: 0;
+    margin: 0; 
+}
+::-webkit-scrollbar {
+    width: 8px;
+		height:8px;
+}
+::-webkit-scrollbar-track {
+    background-color: #000000;
+    border-left: none;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #828282;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #6e6d6d;
 }
 
 html, body{
@@ -38,9 +52,11 @@ html, body{
 	padding-right:0px;
 	padding-left:0px;
 	z-index:1000000000;
-	background-color:rgba(0,0,0,0.2);
+	background-color:rgba(0,0,0,0.1);
 	width:100%;
 	height:100%;
+	overflow:hidden;
+	pointer-events:none;
 }
 
 header{
@@ -49,6 +65,7 @@ header{
 	background-color:rgba(54,54,54,1);
 	position:absolute;
 	top:0px;
+	pointer-events:visible;
 }
 
 #logo{
@@ -107,17 +124,18 @@ header #selectFilter label{
 }
 
 #hello{
-	width:300px;
-	height:400px;
+	width:350px;
+	height:450px;
 	background-color:#fff;
 	text-align:center;
 	position:absolute;
 	top:50%;
 	left:50%;
-	margin:-200px 0 0 -150px;
+	margin:-225px 0 0 -175px;
 	border-radius: 6px;
 	border:10px solid rgba(0,0,0,0.6);
 	padding:10px 15px;
+	pointer-events:visible;
 }
 #hello span{
 	float:right;
@@ -138,10 +156,153 @@ header #selectFilter label{
 }
 
 .btn-style{
+	font-size:23px;
 	font-style:normal;
-	padding:12px 0;
+	padding:12px 0 20px;
 	background-color:#7a1e1e;
 	border:none;
 	box-shadow: 3px 3px 10px rgba(0,0,0,0.2), rgba(0,0,0,0.8) 0px 0px 16px inset;
+}
+
+#listLeft{
+	width:250px;
+	height:91%;
+	background-color:rgba(0,0,0,0.5);
+	position:absolute;
+	left:10px;
+	top:52px;
+	padding:15px;
+	text-align:center;
+	pointer-events:visible;
+}
+#listLeft input{
+	margin:10px 0;
+	padding-left:25px;
+}
+i{
+	position:relative;
+	top:-35px !important;
+	left:-95px;
+	color:#e9e9e9;
+}
+
+#listPlacer{
+	position:relative;
+	width:100%;
+	height:87%;
+	background-color:rgba(0,0,0,0.8);
+	display:inline-block;
+	text-align:left;
+	overflow-y:scroll;
+}
+#listPlacer ul{
+	width:100%;
+	height:100%;
+	padding:12px 10px;
+	margin:0;
+}
+#listPlacer ul li{
+	color:#f2f2f2;
+	padding:15px 0;
+	margin:0;
+	list-style:none;
+	font-size:14px;
+	border-bottom:1px solid #717171;
+}
+#listPlacer ul li:last-of-type{
+	border-bottom: none;
+}
+#scrollList{
+	width:8px;
+	height:100%;
+	background-color:rgba(0,0,0,0.8);
+	position:absolute;
+	right:2px;
+	top:0px;
+}
+
+#btnOpenClose{
+	display:block;
+	position:absolute;
+	background-color:rgba(0,0,0,1);
+}
+#btnOpenClose.btnCloseLeft{
+	padding:15px 0 0;
+	width:15px;
+	height:50px;
+	top:50%;
+	right:-5px;
+	margin:-25px 0 0;
+	color:#fff;
+	border-radius: 5px 0 0 5px;
+	cursor:pointer;
+}
+#btnOpenClose.btnCloseLeft{
+	padding:15px 0 0;
+	width:15px;
+	height:50px;
+	top:50%;
+	right:-5px;
+	margin:-25px 0 0;
+	color:#fff;
+	border-radius: 5px 0 0 5px;
+	cursor:pointer;
+}
+
+#marketPlacer{
+	text-align:center;
+	position:absolute;
+	top:50%;
+	margin:-225px 0 0;
+	border-radius: 6px;
+	pointer-events:visible;
+}
+#market{
+	background-color:#fff;
+	border-radius: 6px;
+	border:10px solid rgba(0,0,0,0.6);
+	padding:10px 15px;
+}
+#market span{
+	float:right;
+}
+#market span a{
+	color:#d9d9d9;
+}
+#market span a:hover{
+	color:#000;
+	text-decoration:none;
+}
+#listProducts{
+	width:100%;
+	height:200px;
+	overflow-x:scroll;
+	overflow-y:hidden;
+}
+#listProducts ul{
+	max-height:200px;
+	width:920px;
+	padding:10px;
+	margin:0;
+	display:block;
+}
+#listProducts ul li{
+	width:150px;
+	height:90%;
+	float:left;
+	padding:0;
+	margin:10px 0;
+	list-style:none;
+	border-right:1px solid #e4dede;
+	text-align:center;
+}
+#listProducts ul li h4{
+	padding:0;
+	margin:0 0 10px;
+}
+#listProducts ul li img{
+	padding:0;
+	margin:0;
+	width:35px;
 }
 
