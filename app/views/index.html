@@ -4,31 +4,54 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-    <link rel="stylesheet" href="/vendor/tacit-0.6.1.min.css" />
+    <!--<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css"> -->
     <link rel="stylesheet" href="/stylesheets/base.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
-    <title>Wines</title>
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Arvo:400i|Pacifico" rel="stylesheet">
+    <title>Find Wine App - Trouvez du bon vin tout simplement!</title>
 </head>
 
 <body>
-
-    <!-- <div class="row">
-    <div class="col-xs-12 col-md-6"> -->
-    <map></map>
-    <!-- </div>
-</div> -->
-
-
-    <h1>Listes</h1>
-
-    <market-list></market-list>
-
-    <owner-list></owner-list>
-
-    <product-list></product-list>
-
+    
+  <map></map>
+  
+    
+  <div id="content" class="container-fluid">
+    <div id="barra" class="barraLeft"></div>
+    <div id="barra"  class="barraRight"></div>
+    <div id="barra"  class="barraBottom"></div>
+    <header>
+      <div id="logo">
+      <span></span><h1>FindWine</h1></div>
+      <div id="selectFilter">
+        <div class="form-group">
+          <label class="fontDetail">Listes : </label>
+          <label class="radio-inline">
+            <input type="radio" name="filterDisplayOptions" id="radioMagazins" value="magazins"> Magazins
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="filterDisplayOptions" id="radioProducteurs" value="producteurs"> Producteurs
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="filterDisplayOptions" id="radioVins" value="vins"> Vins
+          </label>
+        </div>
+      </div>
+    </header>
+    
+  <div id="hello">
+    <span class="btnClose"><a href="#">X</a></span>
+    <h2 class="fontStyle">Bien Venue!</h2>
+    <h4 class="fontDetail">Besoin d’aide pour trouver du bon vin?</h3>
+    <button type="button" class="btn btn-danger btn-style btn-lg fontStyle">Touts les Magazins</button>
+    <button type="button" class="btn btn-danger btn-style btn-lg fontStyle">Touts les Producteurs</button>
+    <button type="button" class="btn btn-danger btn-style btn-lg fontStyle">Touts les Vins</button>
+  </div>
+   
+  </div>
+  
+  
     <script src="/node_modules/angular/angular.js"></script>
     <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
 
@@ -51,12 +74,6 @@
     <script src="/app/components/ownerList/ownerListModule.js"></script>
     <script src="/app/components/ownerList/ownerListController.js"></script>
     <script src="/app/components/ownerList/ownerListComponent.js"></script>
-
-    <!--js-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-
     <script src="/app/components/productList/productListModule.js"></script>
     <script src="/app/components/productList/productListController.js"></script>
     <script src="/app/components/productList/productListComponent.js"></script>

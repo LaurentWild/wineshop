@@ -4,20 +4,144 @@ body {
     margin: 0;
 }
 
-html, body, #mapid {
+html, body{
     height: 100%;
     width: 100%;
 }
 #mapid {
     position: relative;
+    height: 99%;
+    width: 100%;
 }
 
 #marketTab {
     background-color: #F00;
-
     height: 30px;
     position: absolute;
     width: 100px;
     top:10px;
-    z-index: 100000;
+    z-index: 1000;
 }
+
+.fontStyle{
+	font-family: 'Pacifico', cursive;
+}
+.fontDetail{
+	font-family: 'Arvo', serif;
+	font-weight:300;
+}
+
+#content{
+	position:absolute;
+	top:0px;
+	left:0px;
+	padding-right:0px;
+	padding-left:0px;
+	z-index:1000000000;
+	background-color:rgba(0,0,0,0.2);
+	width:100%;
+	height:100%;
+}
+
+header{
+	width:100%;
+	height:52px;
+	background-color:rgba(54,54,54,1);
+	position:absolute;
+	top:0px;
+}
+
+#logo{
+	height:52px;
+	display:inline-block;
+	margin-left:30px;
+}
+#logo span{
+	height:46px;
+	width:26px;
+	display:inline-block;
+	background-image:url('../imgs/ico-logo.jpg');
+}
+#logo h1{
+	font-size:36px;
+	color:#fff;
+	display:inline-block;
+	font-family: 'Pacifico', cursive;
+	margin:0 0 0 7px;
+	position:relative;
+	top:-5px;
+}
+
+header #selectFilter{
+	float:right;
+	margin:15px 30px 15px 0;
+	color:#fff;
+}
+header #selectFilter label{
+	margin-left:15px;
+	font-size:15px;
+}
+
+#barra{
+	background-color:rgba(54,54,54,1);
+	position:relative;
+	margin:0;
+	padding:0;
+}
+#barra.barraLeft{
+	width:10px;
+	height:100%;
+	float:left;
+}
+#barra.barraRight{
+	width:10px;
+	height:100%;
+	float:right;
+}
+#barra.barraBottom{
+	position:absolute;
+	height:10px;
+	width:100%;
+	bottom:0px;
+	display:inline-block;
+}
+
+#hello{
+	width:300px;
+	height:400px;
+	background-color:#fff;
+	text-align:center;
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin:-200px 0 0 -150px;
+	border-radius: 6px;
+	border:10px solid rgba(0,0,0,0.6);
+	padding:10px 15px;
+}
+#hello span{
+	float:right;
+}
+#hello span a{
+	color:#d9d9d9;
+}
+#hello span a:hover{
+	color:#000;
+	text-decoration:none;
+}
+#hello h4{
+	margin:20px 0 30px;
+}
+#hello .btn-style{
+	margin:0 0 20px;
+	width:80%;
+}
+
+.btn-style{
+	font-style:normal;
+	padding:12px 0;
+	background-color:#7a1e1e;
+	border:none;
+	box-shadow: 3px 3px 10px rgba(0,0,0,0.2), rgba(0,0,0,0.8) 0px 0px 16px inset;
+}
+
