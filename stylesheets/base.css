@@ -231,6 +231,7 @@ i {
     list-style: none;
     font-size: 14px;
     border-bottom: 1px solid #717171;
+		cursor:pointer;
 }
 
 #listPlacer ul li:last-of-type {
@@ -323,6 +324,7 @@ i {
     list-style: none;
     border-right: 1px solid #e4dede;
     text-align: center;
+		cursor:pointer;
 }
 
 #listProducts ul li h4 {
