@@ -10,7 +10,7 @@
         <div class="form-group">
             <label class="fontDetail">Listes : </label>
             <label class="radio-inline">
-        <input type="radio" name="filterDisplayOptions" id="radioMagazins" value="magazins" ng-click="marketsDiv = true;ownersDiv = false;productsDiv = false"> Magazins
+        <input type="radio" name="filterDisplayOptions" id="radioMagazins" value="magazins" ng-click="marketsDiv = true;ownersDiv = false;productsDiv = false"> Magasins
       </label>
             <label class="radio-inline">
         <input type="radio" name="filterDisplayOptions" id="radioProducteurs" value="producteurs" ng-click="marketsDiv = false;ownersDiv = true;productsDiv = false"> Producteurs
@@ -25,9 +25,9 @@
     <span class="btnClose" ng-click="close = true">X</span>
     <h2 class="fontStyle">Bienvenue!</h2>
     <h4 class="fontDetail">Besoin d’aide pour trouver du bon vin ?</h4>
-    <button type="button" class="btn btn-danger btn-style btn-lg fontStyle">Tous les Magasins</button>
-    <button type="button" class="btn btn-danger btn-style btn-lg fontStyle">Tous les Producteurs</button>
-    <button type="button" class="btn btn-danger btn-style btn-lg fontStyle">Tous les Vins</button>
+    <button type="button" class="btn btn-danger btn-style btn-lg fontStyle" ng-click="marketsDiv = true;ownersDiv = false;productsDiv = false">Tous les Magasins</button>
+    <button type="button" class="btn btn-danger btn-style btn-lg fontStyle" ng-click="marketsDiv = false;ownersDiv = true;productsDiv = false">Tous les Producteurs</button>
+    <button type="button" class="btn btn-danger btn-style btn-lg fontStyle" ng-click="marketsDiv = false;ownersDiv = false; productsDiv = true">Tous les Vins</button>
 </div>
 
 
