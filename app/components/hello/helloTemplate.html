@@ -1,7 +1,4 @@
-<div id="barra" class="barraLeft">
-</div>
-<div id="barra" class="barraRight"></div>
-<div id="barra" class="barraBottom"></div>
+
 <header>
     <div id="logo">
         <span></span>
@@ -33,17 +30,17 @@
 
 
 <div id="marketsList" ng-controller="marketListController as mar">
-    <div id="listLeft" ng-show="showMarketsList">
+    <div id="listLeft" ng-if="showMarketsList" ng-hide="closeit">
         <input id="searchList" class="form-control" type="text" placeholder="Recherche..." ng-model="$ctrl.searchmarket">
         <i class="form-control-feedback glyphicon glyphicon-search" aria-hidden="true"></i>
         <div id="listPlacer">
             <ul id="list">
-                <li ng-repeat="market in mar.markets | filter: $ctrl.searchmarket" ng-click="mar.marketNameClick()">
+                <li ng-repeat="market in mar.markets | filter: $ctrl.searchmarket" ng-click="mar.marketNameClick(market)">
                     {{market.name}}
                 </li>
             </ul>
         </div>
-        <div id="btnOpenClose" class="btnCloseLeft" ng-click="showMarketsList = false">&#60;</div>
+        <div id="btnOpenClose" class="btnCloseLeft" ng-click="closeit = true">&#60;</div>
     </div>
 
     <div id="marketPlacer" ng-show="showMarketPlacer">
@@ -54,7 +51,7 @@
             <h3 class="fontDetail">Liste de Produits</h3>
             <div id="listProducts">
                 <ul>
-                    <li ng-repeat="product in marketProducts">
+                    <li ng-repeat="product in marketProducts" ng-click="prod.productNameClick(product)">
                         <h4 class="fontDetail">{{ product.name }}</h4>
                         <img src="{{ 'http://wine.wildcodeschool.fr' + product.picture }}" alt="{{product.name}}">
                     </li>
@@ -65,17 +62,18 @@
 </div>
 
 <div id="ownersList" ng-controller="ownerListController as own">
-    <div id="listLeft" ng-show="showOwnersList">
+    <div id="listLeft" ng-if="showOwnersList" ng-hide="closeit">
         <input id="searchList" class="form-control" type="text" placeholder="Recherche..." ng-model="$ctrl.searchowner">
         <i class="form-control-feedback glyphicon glyphicon-search" aria-hidden="true"></i>
         <div id="listPlacer">
             <ul id="list">
-                <li ng-repeat="owner in own.owners | filter: $ctrl.searchowner">{{owner.fullname}}</li>
+                <li ng-repeat="owner in own.owners | filter: $ctrl.searchowner" ng-click="own.ownerNameClick(owner)">{{owner.fullname}}</li>
             </ul>
         </div>
-        <div id="btnOpenClose" class="btnCloseLeft" ng-click="showOwnersList = false">&#60;</div>
+        <div id="btnOpenClose" class="btnCloseLeft" ng-click="closeit = true">&#60;</div>
     </div>
-    <!-- <div id="ownerPlacer">
+    
+    <div id="ownerPlacer" ng-show="showOwnerPlacer">
       <div id="owner">
           <span class="btnClose" ng-click="showOwnerPlacer = false">X</span>
         <div class="leftBlock">
@@ -92,19 +90,37 @@
           </ul>
         </div>
       </div>
-    </div> -->
+    </div>
 </div>
+
 <div id="productsList" ng-controller="productListController as prod">
-    <div id="listLeft" ng-show="showProductsList">
+    <div id="listLeft" ng-if="showProductsList" ng-hide="closeit">
         <input id="searchList" class="form-control" type="text" placeholder="Recherche..." ng-model="$ctrl.searchproduct">
         <i class="form-control-feedback glyphicon glyphicon-search" aria-hidden="true"></i>
         <div id="listPlacer">
             <ul id="list">
-                <li ng-repeat="product in prod.products | filter: $ctrl.searchproduct">{{product.name}}</li>
+                <li ng-repeat="product in prod.products | filter: $ctrl.searchproduct" ng-click="prod.productNameClick(product)">{{product.name}}</li>
             </ul>
         </div>
-        <div id="btnOpenClose" class="btnCloseLeft" ng-click="showProductsList = false">&#60;</div>
+        <div id="btnOpenClose" class="btnCloseLeft" ng-click="closeit = true">&#60;</div>
     </div>
+    
+    <div id="productPlacer" ng-show="showProductPlacer">
+      <div id="product">
+        <span class="btnClose" ng-click="showProductPlacer = false">X</span>
+        <div class="leftBlock">
+          <img src="{{ 'http://wine.wildcodeschool.fr' + prodImage }}" alt="{{prodName}}">
+        </div>
+        <div class="rightBlock">
+          <h1 class="fontStyle">{{ prodName }}</h1>
+          <p class="fontDetail">{{ prodDesc }}</p>
+          <h3 class="fontDetail">owner.fullname</h3>
+          <h4 class="fontDetail">owner.email</h4>
+        </div>
+      </div>
+    </div> 
 </div>
-<div id="markerDetail" ng-show="markerDetail">
-</div>
+
+<div id="barra" class="barraLeft"></div>
+<div id="barra" class="barraRight"></div>
+<div id="barra" class="barraBottom"></div>
